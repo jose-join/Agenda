@@ -1,6 +1,3 @@
-*****************************
- Librerï¿½as utilizadas
-*****************************/
 #include <iostream>					/*Flujo de entrada y salida de datos*/
 #include <string.h>					/*Funciones de manejo de cadenas*/
 //#include <windows.h>				/*Permite usar comandos de Windows Console*/
@@ -105,7 +102,7 @@ void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::
     if (archivo_salida.is_open()) {
         for (const auto& contacto : contactos) {
             archivo_salida << "Nombre: " << contacto.Nombre << std::endl;
-            archivo_salida << "Teléfono: " << contacto.Telefono << std::endl;
+            archivo_salida << "Telï¿½fono: " << contacto.Telefono << std::endl;
             archivo_salida << "Correo: " << contacto.Email<< std::endl;
             archivo_salida << "Email: " << contacto.Email<< std::endl;
             archivo_salida << "Fecha.Nacimiento: " << contacto.Email<< std::endl;
@@ -575,7 +572,7 @@ void Actualizar(struct Agenda Contactos[], int posicion){
 		
 		/*Menï¿½ para seleccionar qu? atributos desean actualizar*/
 		do {
-			cout << "\n\t¿Que dato le gustaria actualizar de este contacto?" << endl;
+			cout << "\n\tï¿½Que dato le gustaria actualizar de este contacto?" << endl;
 			cout << "  (1)Nombre | (2)Telefono | (3)Celular (4)Email | (5)Ninguno" << endl;
 			cout << Regla << endl;
 			
@@ -774,7 +771,7 @@ int Salir(){
 
     std::string nombreArchivo = "agenda.txt"; // Nombre del archivo de texto para guardar los contactos
 
-    // Llamada a la función para guardar los contactos en un archivo de texto
+    // Llamada a la funciï¿½n para guardar los contactos en un archivo de texto
     guardarContactosEnArchivo(contactos, nombreArchivo);	
 	} while(x < 1 || x > 2);
 	

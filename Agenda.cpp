@@ -107,6 +107,8 @@ void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::
             archivo << "Nombre: " << contacto.Nombre << std::endl;
             archivo << "Teléfono: " << contacto.Telefono << std::endl;
             archivo << "Correo: " << contacto.Email<< std::endl;
+            archivo << "Email: " << contacto.Email<< std::endl;
+            archivo << "Fecha.Nacimiento: " << contacto.Email<< std::endl;
             archivo << std::endl;
         }
         archivo.close();
@@ -765,10 +767,19 @@ int Salir(){
 		cout << "\n\tEstas seguro(a) de querer hacerlo?" << endl;
 		cout << "\t(1) Si, (2) No: ";
 		cin >> x;
-		
+	 std::vector<Agenda> contactos;
+  Agenda nuevoContacto;
+    // Agregar el nuevo contacto al vector de contactos
+    contactos.push_back(nuevoContacto);
+
+    std::string nombreArchivo = "agenda.txt"; // Nombre del archivo de texto para guardar los contactos
+
+    // Llamada a la función para guardar los contactos en un archivo de texto
+    guardarContactosEnArchivo(contactos, nombreArchivo);	
 	} while(x < 1 || x > 2);
 	
 	cout << endl;
 	
 	return x;
 }
+

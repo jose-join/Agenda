@@ -1,4 +1,4 @@
-/*****************************
+/*****************************=
  Librer�as utilizadas
 *****************************/
 #include <iostream>					/*Flujo de entrada y salida de datos*/

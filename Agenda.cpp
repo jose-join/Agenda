@@ -1,4 +1,4 @@
-/*****************************
+/*****************************=
  Librerï¿½as utilizadas
 *****************************/
 #include <iostream>					/*Flujo de entrada y salida de datos*/
@@ -102,6 +102,7 @@ Agenda::Agenda() {
 void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::string& nombreArchivo) {
     std::ofstream archivo(nombreArchivo);
 
+<<<<<<< HEAD
     if (archivo.is_open()) {
         for (const auto& contacto : contactos) {
             archivo << "Nombre: " << contacto.Nombre << std::endl;
@@ -117,6 +118,10 @@ void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::
         std::cerr << "Error al abrir el archivo: " << nombreArchivo << std::endl;
     }
 }
+=======
+
+    
+>>>>>>> JoseAgenda
 /*****************************
 	  FUNCIÃ“N PRINCIPAL
 *****************************/
@@ -775,7 +780,11 @@ int Salir(){
     std::string nombreArchivo = "agenda.txt"; // Nombre del archivo de texto para guardar los contactos
 
     // Llamada a la función para guardar los contactos en un archivo de texto
+<<<<<<< HEAD
     guardarContactosEnArchivo(contactos, nombreArchivo);	
+=======
+    	
+>>>>>>> JoseAgenda
 	} while(x < 1 || x > 2);
 	
 	cout << endl;

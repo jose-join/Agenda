@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /*****************************=
 =======
@@ -6,6 +7,8 @@
 >>>>>>> a1ff09591cb131ad2fe79b401c61dddf406bc05c
  Librerï¿½as utilizadas
 *****************************/
+>>>>>>> fernandoagenda
+=======
 >>>>>>> fernandoagenda
 #include <iostream>					/*Flujo de entrada y salida de datos*/
 #include <string.h>					/*Funciones de manejo de cadenas*/
@@ -110,6 +113,7 @@ void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (archivo.is_open()) {
         for (const auto& contacto : contactos) {
             archivo << "Nombre: " << contacto.Nombre << std::endl;
@@ -128,6 +132,16 @@ void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::
             archivo_salida << "Fecha.Nacimiento: " << contactos[i].Email << std::endl;
             archivo_salida << std::endl;
 >>>>>>> a1ff09591cb131ad2fe79b401c61dddf406bc05c
+=======
+    if (archivo_salida.is_open()) {
+        for (const auto& contacto : contactos) {
+            archivo_salida << "Nombre: " << contacto.Nombre << std::endl;
+            archivo_salida << "Telï¿½fono: " << contacto.Telefono << std::endl;
+            archivo_salida << "Correo: " << contacto.Email<< std::endl;
+            archivo_salida << "Email: " << contacto.Email<< std::endl;
+            archivo_salida << "Fecha.Nacimiento: " << contacto.Email<< std::endl;
+            archivo_salida << std::endl;
+>>>>>>> fernandoagenda
         }
         archivo_salida.close();
         std::cout << "Contactos guardados en el archivo: " << nombre_archivo << std::endl;
@@ -601,7 +615,7 @@ void Actualizar(struct Agenda Contactos[], int posicion){
 		
 		/*Menï¿½ para seleccionar qu? atributos desean actualizar*/
 		do {
-			cout << "\n\t¿Que dato le gustaria actualizar de este contacto?" << endl;
+			cout << "\n\tï¿½Que dato le gustaria actualizar de este contacto?" << endl;
 			cout << "  (1)Nombre | (2)Telefono | (3)Celular (4)Email | (5)Ninguno" << endl;
 			cout << Regla << endl;
 			
@@ -800,8 +814,12 @@ int Salir(){
 
     std::string nombreArchivo = "agenda.txt"; // Nombre del archivo de texto para guardar los contactos
 
+<<<<<<< HEAD
     // Llamada a la función para guardar los contactos en un archivo de texto
 <<<<<<< HEAD
+=======
+    // Llamada a la funciï¿½n para guardar los contactos en un archivo de texto
+>>>>>>> fernandoagenda
     guardarContactosEnArchivo(contactos, nombreArchivo);	
 =======
     	

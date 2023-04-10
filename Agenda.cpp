@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 /*****************************=
+=======
+
+/*****************************
+>>>>>>> a1ff09591cb131ad2fe79b401c61dddf406bc05c
  Librerï¿½as utilizadas
 *****************************/
+>>>>>>> fernandoagenda
 #include <iostream>					/*Flujo de entrada y salida de datos*/
 #include <string.h>					/*Funciones de manejo de cadenas*/
 //#include <windows.h>				/*Permite usar comandos de Windows Console*/
@@ -99,9 +105,10 @@ Agenda::Agenda() {
 	Email 		= " ";								/*Para email, dejar un espacio en blanco*/
 	Fecha.Nacimiento = " ";							/*Para fecha, dejar un espacio en blanco*/
 }
-void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::string& nombreArchivo) {
-    std::ofstream archivo(nombreArchivo);
+void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::string& nombre_archivo) {
+    std::ofstream archivo_salida(nombre_archivo.c_str()); // Convertir std::string a const char*
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     if (archivo.is_open()) {
         for (const auto& contacto : contactos) {
@@ -111,17 +118,31 @@ void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::
             archivo << "Email: " << contacto.Email<< std::endl;
             archivo << "Fecha.Nacimiento: " << contacto.Email<< std::endl;
             archivo << std::endl;
+=======
+    if (archivo_salida.is_open()) {
+        for (size_t i = 0; i < contactos.size(); ++i) {
+            archivo_salida << "Nombre: " << contactos[i].Nombre << std::endl;
+            archivo_salida << "Teléfono: " << contactos[i].Telefono << std::endl;
+            archivo_salida << "Correo: " << contactos[i].Email << std::endl;
+            archivo_salida << "Email: " << contactos[i].Email << std::endl;
+            archivo_salida << "Fecha.Nacimiento: " << contactos[i].Email << std::endl;
+            archivo_salida << std::endl;
+>>>>>>> a1ff09591cb131ad2fe79b401c61dddf406bc05c
         }
-        archivo.close();
-        std::cout << "Contactos guardados en el archivo: " << nombreArchivo << std::endl;
+        archivo_salida.close();
+        std::cout << "Contactos guardados en el archivo: " << nombre_archivo << std::endl;
     } else {
-        std::cerr << "Error al abrir el archivo: " << nombreArchivo << std::endl;
+        std::cerr << "Error al abrir el archivo: " << nombre_archivo << std::endl;
     }
 }
+<<<<<<< HEAD
 =======
 
     
 >>>>>>> JoseAgenda
+=======
+
+>>>>>>> a1ff09591cb131ad2fe79b401c61dddf406bc05c
 /*****************************
 	  FUNCIÃ“N PRINCIPAL
 *****************************/

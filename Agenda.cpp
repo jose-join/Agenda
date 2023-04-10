@@ -1,4 +1,4 @@
-/*****************************
+*****************************
  Librerï¿½as utilizadas
 *****************************/
 #include <iostream>					/*Flujo de entrada y salida de datos*/
@@ -99,22 +99,22 @@ Agenda::Agenda() {
 	Email 		= " ";								/*Para email, dejar un espacio en blanco*/
 	Fecha.Nacimiento = " ";							/*Para fecha, dejar un espacio en blanco*/
 }
-void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::string& nombreArchivo) {
-    std::ofstream archivo(nombreArchivo);
+void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::string& nombre_archivo) {
+    std::ofstream archivo_salida(nombre_archivo.c_str()); // Convertir std::string a const char*
 
-    if (archivo.is_open()) {
+    if (archivo_salida.is_open()) {
         for (const auto& contacto : contactos) {
-            archivo << "Nombre: " << contacto.Nombre << std::endl;
-            archivo << "Teléfono: " << contacto.Telefono << std::endl;
-            archivo << "Correo: " << contacto.Email<< std::endl;
-            archivo << "Email: " << contacto.Email<< std::endl;
-            archivo << "Fecha.Nacimiento: " << contacto.Email<< std::endl;
-            archivo << std::endl;
+            archivo_salida << "Nombre: " << contacto.Nombre << std::endl;
+            archivo_salida << "Teléfono: " << contacto.Telefono << std::endl;
+            archivo_salida << "Correo: " << contacto.Email<< std::endl;
+            archivo_salida << "Email: " << contacto.Email<< std::endl;
+            archivo_salida << "Fecha.Nacimiento: " << contacto.Email<< std::endl;
+            archivo_salida << std::endl;
         }
-        archivo.close();
-        std::cout << "Contactos guardados en el archivo: " << nombreArchivo << std::endl;
+        archivo_salida.close();
+        std::cout << "Contactos guardados en el archivo: " << nombre_archivo << std::endl;
     } else {
-        std::cerr << "Error al abrir el archivo: " << nombreArchivo << std::endl;
+        std::cerr << "Error al abrir el archivo: " << nombre_archivo << std::endl;
     }
 }
 /*****************************

@@ -1,6 +1,3 @@
-/*****************************
- Librer�as utilizadas
-*****************************/
 #include <iostream>					/*Flujo de entrada y salida de datos*/
 #include <string.h>					/*Funciones de manejo de cadenas*/
 //#include <windows.h>				/*Permite usar comandos de Windows Console*/

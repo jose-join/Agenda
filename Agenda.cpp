@@ -99,24 +99,6 @@ Agenda::Agenda() {
 	Email 		= " ";								/*Para email, dejar un espacio en blanco*/
 	Fecha.Nacimiento = " ";							/*Para fecha, dejar un espacio en blanco*/
 }
-void guardarContactosEnArchivo(const std::vector<Agenda>& contactos, const std::string& nombreArchivo) {
-    std::ofstream archivo(nombreArchivo);
-
-    if (archivo.is_open()) {
-        for (const auto& contacto : contactos) {
-            archivo << "Nombre: " << contacto.Nombre << std::endl;
-            archivo << "Teléfono: " << contacto.Telefono << std::endl;
-            archivo << "Correo: " << contacto.Email<< std::endl;
-            archivo << "Email: " << contacto.Email<< std::endl;
-            archivo << "Fecha.Nacimiento: " << contacto.Email<< std::endl;
-            archivo << std::endl;
-        }
-        archivo.close();
-        std::cout << "Contactos guardados en el archivo: " << nombreArchivo << std::endl;
-    } else {
-        std::cerr << "Error al abrir el archivo: " << nombreArchivo << std::endl;
-    }
-}
 /*****************************
 	  FUNCIÃ“N PRINCIPAL
 *****************************/
@@ -176,6 +158,21 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	while (salir == 0);						/*Se retorna al Menï¿½ principal en caso de que no haya seleccionado Salir*/
+	ofstream Archivo("Contactos.txt");
+	for (int i= 0 ; i<ContactosRegistrados;i++) {
+		
+		Archivo<<"Contactos  "<<i+1<<":"<<endl;
+		Archivo<<"Nombre: "<<Contactos[i].Nombre<<endl;
+		Archivo<<"TelÃ©fono: "<<Contactos[i].Telefono<<endl;
+		Archivo<<"Celular: "<<Contactos[i].Celular<<endl;
+		Archivo<<"Email: "<<Contactos[i].Email<<endl;
+		Archivo<<"Fecha de Nacimiento:  "<<Contactos[i].Fecha.Nacimiento<<endl;
+		
+		Archivo<<endl;
+	}
+	Archivo.close();
+	cout<<"Datos de contacto exportado correctamente al archivo Contacto.txt"<<endl;	
+	return 0;
 	
 	return 0;
 }
@@ -575,7 +572,7 @@ void Actualizar(struct Agenda Contactos[], int posicion){
 		
 		/*Menï¿½ para seleccionar qu? atributos desean actualizar*/
 		do {
-			cout << "\n\t¿Que dato le gustaria actualizar de este contacto?" << endl;
+			cout << "\n\tï¿½Que dato le gustaria actualizar de este contacto?" << endl;
 			cout << "  (1)Nombre | (2)Telefono | (3)Celular (4)Email | (5)Ninguno" << endl;
 			cout << Regla << endl;
 			
@@ -767,15 +764,8 @@ int Salir(){
 		cout << "\n\tEstas seguro(a) de querer hacerlo?" << endl;
 		cout << "\t(1) Si, (2) No: ";
 		cin >> x;
-	 std::vector<Agenda> contactos;
-  Agenda nuevoContacto;
     // Agregar el nuevo contacto al vector de contactos
-    contactos.push_back(nuevoContacto);
-
-    std::string nombreArchivo = "agenda.txt"; // Nombre del archivo de texto para guardar los contactos
-
-    // Llamada a la función para guardar los contactos en un archivo de texto
-    guardarContactosEnArchivo(contactos, nombreArchivo);	
+    // Llamada a la funciï¿½n para guardar los contactos en un archivo de texto
 	} while(x < 1 || x > 2);
 	
 	cout << endl;

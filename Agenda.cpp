@@ -156,6 +156,7 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	while (salir == 0);						/*Se retorna al Men� principal en caso de que no haya seleccionado Salir*/
+	//Función para guardar archivos
 	ofstream Archivo("Contactos.txt");
 	for (int i= 0 ; i<ContactosRegistrados;i++) {
 		

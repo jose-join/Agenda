@@ -17,6 +17,7 @@ using namespace std;
 	una variable Regla que presentara una
 	mejor vista en el programa.
 */
+
 int ContactosRegistrados = 0;
 int ContactosEliminados  = 0;
 string Regla = "=============================================================";
